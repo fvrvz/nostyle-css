@@ -18,7 +18,8 @@
   "files": [
     "dist",
     "src",
-    "postcss.config.cjs"
+    "postcss.config.cjs",
+    "README.md"
   ],
   "keywords": [
     "css",
