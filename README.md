@@ -31,21 +31,21 @@ Use it like Tailwind — ship it lean. Built for developers who want clean defau
 ### Install
 
 ```bash
-npm install nostyle-css
+npm install @fayso/nostyle-css
 # or
-pnpm add nostyle-css
+pnpm add @fayso/nostyle-css
 ```
 
 ### Import
 
 ```ts
 // Full framework (recommended)
-import "nostyle-css";
+import "@fayso/nostyle-css";
 
 // Or selective imports
-import "nostyle-css/base"; // reset + CSS variables
-import "nostyle-css/utilities"; // utility classes
-import "nostyle-css/components"; // btn, card, badge, input, etc.
+import "@fayso/nostyle-css/base"; // reset + CSS variables
+import "@fayso/nostyle-css/utilities"; // utility classes
+import "@fayso/nostyle-css/components"; // btn, card, badge, input, etc.
 ```
 
 ### CDN

@@ -29,10 +29,10 @@ const isInstallPage = computed(() => page.value?.title === "Installation");
 
 /* ── Install page data ── */
 const pkgManagerTabs = [
-  { label: "npm", code: "npm install nostyle-css" },
-  { label: "pnpm", code: "pnpm add nostyle-css" },
-  { label: "yarn", code: "yarn add nostyle-css" },
-  { label: "bun", code: "bun add nostyle-css" },
+  { label: "npm", code: "npm install @fayso/nostyle-css" },
+  { label: "pnpm", code: "pnpm add @fayso/nostyle-css" },
+  { label: "yarn", code: "yarn add @fayso/nostyle-css" },
+  { label: "bun", code: "bun add @fayso/nostyle-css" },
 ];
 
 const cdnTabs = [
@@ -45,7 +45,7 @@ const cdnTabs = [
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link
     rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/nostyle-css/dist/nostyle.css"
+    href="https://cdn.jsdelivr.net/npm/@fayso/nostyle-css/dist/nostyle.css"
   />
   <title>My App</title>
 </head>
@@ -60,12 +60,12 @@ const viteSetupTabs = [
   {
     label: "main.ts",
     code: `// main.ts
-import "nostyle-css";
+import "@fayso/nostyle-css";
 
 // or import selectively:
-// import "nostyle-css/base";
-// import "nostyle-css/utilities";
-// import "nostyle-css/components";`,
+// import "@fayso/nostyle-css/base";
+// import "@fayso/nostyle-css/utilities";
+// import "@fayso/nostyle-css/components";`,
   },
   {
     label: "App.vue",
@@ -83,7 +83,7 @@ const nuxtSetupTabs = [
     label: "nuxt.config.ts",
     code: `// nuxt.config.ts
 export default defineNuxtConfig({
-  css: ["nostyle-css"],
+  css: ["@fayso/nostyle-css"],
 });`,
   },
   {
@@ -101,7 +101,7 @@ const nextSetupTabs = [
   {
     label: "layout.tsx",
     code: `// app/layout.tsx
-import "nostyle-css";
+import "@fayso/nostyle-css";
 
 export default function RootLayout({ children }) {
   return (
@@ -129,7 +129,7 @@ const postcssTab = [
   {
     label: "postcss.config.js",
     code: `// postcss.config.js
-module.exports = require("nostyle-css/postcss");`,
+module.exports = require("@fayso/nostyle-css/postcss");`,
   },
 ];
 
@@ -137,17 +137,17 @@ const selectiveImportTabs = [
   {
     label: "main.ts",
     code: `// Full import (everything)
-import "nostyle-css";
+import "@fayso/nostyle-css";
 
 // Or import selectively:
-import "nostyle-css/base";       // reset + CSS variables
-import "nostyle-css/utilities";  // utility classes
-import "nostyle-css/components"; // btn, card, badge, input, etc.`,
+import "@fayso/nostyle-css/base";       // reset + CSS variables
+import "@fayso/nostyle-css/utilities";  // utility classes
+import "@fayso/nostyle-css/components"; // btn, card, badge, input, etc.`,
   },
   {
     label: "treeshake.ts",
     code: `// For production — PurgeCSS-optimised build
-import "nostyle-css/css/treeshake";`,
+import "@fayso/nostyle-css/css/treeshake";`,
   },
 ];
 

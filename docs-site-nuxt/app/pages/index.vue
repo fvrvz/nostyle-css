@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import {
   ArrowRight,
-  Zap,
-  Feather,
-  Palette,
-  TreePine,
   Code,
   Coffee,
-  ExternalLink,
+  Feather,
   Heart,
+  Palette,
+  TreePine,
+  Zap
 } from "@lucide/vue";
 
 definePageMeta({ layout: false });
@@ -137,7 +136,7 @@ const landingCodeTabs = [
         <div
           class="install-snippet card rounded-lg px-6 py-3 mt-4 inline-flex items-center gap-3 text-sm"
         >
-          <code class="text-primary">npm install nostyle-css</code>
+          <code class="text-primary">npm install @fayso/nostyle-css</code>
         </div>
       </div>
     </section>

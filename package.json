@@ -4,7 +4,7 @@
   "packageManager": "pnpm@10.12.4",
   "scripts": {
     "build": "pnpm run build:css && pnpm run build:docs",
-    "build:css": "pnpm --filter nostyle-css run build",
+    "build:css": "pnpm --filter @fayso/nostyle-css run build",
     "build:docs": "pnpm --filter docs-site-nuxt run build",
     "dev": "pnpm --filter docs-site-nuxt run dev",
     "preview": "pnpm --filter docs-site-nuxt run preview",

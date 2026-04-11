@@ -11,7 +11,7 @@ permissions:
   packages: write
 
 jobs:
-  publish:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,7 +20,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          registry-url: https://registry.npmjs.org
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -34,10 +33,59 @@ jobs:
           fi
 
       - name: Build NoStyle CSS
-        run: pnpm --filter nostyle-css run build
+        run: pnpm --filter @fayso/nostyle-css run build
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nostyle-dist
+          path: nostyle/dist
+
+  publish-npm:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node for npm
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: nostyle-dist
+          path: nostyle/dist
+
+      - name: Publish to npm
+        working-directory: nostyle
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  publish-github:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node for GitHub Packages
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://npm.pkg.github.com
+          scope: "@fayso"
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: nostyle-dist
+          path: nostyle/dist
 
       - name: Publish to GitHub Packages
         working-directory: nostyle
-        run: npm publish
+        run: npm publish --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
