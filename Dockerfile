@@ -18,7 +18,7 @@ CMD ["pnpm", "run", "dev"]
 
 # --- Build target ---
 FROM base AS build
-RUN pnpm --filter nostyle-css run build
+RUN pnpm --filter @fayso/nostyle-css run build
 RUN pnpm --filter docs-site-nuxt run generate
 
 # --- Production static server ---
