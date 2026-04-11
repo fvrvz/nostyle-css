@@ -1,0 +1,21 @@
+{
+  "name": "docs-site-nuxt",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "@lucide/vue": "^1.8.0",
+    "@nuxt/content": "^3.12.0",
+    "better-sqlite3": "^12.8.0",
+    "nostyle-css": "workspace:*",
+    "nuxt": "^4.4.2"
+  },
+  "devDependencies": {
+    "shiki": "^4.0.2"
+  }
+}

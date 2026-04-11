@@ -1,0 +1,22 @@
+{
+  "name": "nostyle-monorepo",
+  "private": true,
+  "packageManager": "pnpm@10.12.4",
+  "scripts": {
+    "build": "pnpm run build:css && pnpm run build:docs",
+    "build:css": "pnpm --filter nostyle-css run build",
+    "build:docs": "pnpm --filter docs-site-nuxt run build",
+    "dev": "pnpm --filter docs-site-nuxt run dev",
+    "preview": "pnpm --filter docs-site-nuxt run preview",
+    "generate": "pnpm --filter docs-site-nuxt run generate",
+    "lint": "echo 'No linter configured yet'",
+    "clean": "rm -rf nostyle/dist docs-site-nuxt/.output docs-site-nuxt/.nuxt"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "better-sqlite3",
+      "esbuild"
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [develop, master]
+  pull_request:
+    branches: [develop, master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build NoStyle CSS
+        run: pnpm --filter nostyle-css run build
+
+      - name: Verify dist outputs exist
+        run: |
+          test -f nostyle/dist/nostyle.css
+          test -f nostyle/dist/nostyle.treeshake.css
+          echo "✅ NoStyle CSS dist files generated"
+
+      - name: Build Nuxt docs
+        run: pnpm --filter docs-site-nuxt run generate
+
+      - name: Upload docs artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs-site-nuxt/.output/public

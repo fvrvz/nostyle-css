@@ -1,0 +1,97 @@
+/* ===== Docs site custom styles ===== */
+
+/* Shiki dual-theme: activate dark variables when data-theme="dark" */
+:root[data-theme="dark"] .shiki,
+:root[data-theme="dark"] .shiki span {
+  color: var(--shiki-dark) !important;
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+:root[data-theme="dark"] .shiki {
+  background-color: var(--shiki-dark-bg) !important;
+}
+
+/* Brand */
+.brand-logo-wrap {
+  position: relative;
+}
+.brand-logo-art {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: drop-shadow(0 4px 8px rgb(9 27 53 / 0.15));
+}
+.brand-logo-sparkle {
+  position: absolute;
+  right: -0.4rem;
+  top: -0.3rem;
+  color: #ffe27d;
+  filter: drop-shadow(0 2px 3px rgb(9 27 53 / 0.25));
+}
+
+/* Navigation links */
+.docs-nav-link {
+  color: var(--ns-muted);
+  border-radius: var(--ns-radius-md);
+}
+.docs-nav-link:hover {
+  color: var(--ns-text);
+  background: var(--ns-surface-alt);
+}
+.docs-nav-link-active {
+  color: var(--ns-primary) !important;
+  background: color-mix(in srgb, var(--ns-primary) 10%, transparent) !important;
+  font-weight: 600;
+}
+
+/* Prose enhancements */
+.docs-article.prose h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+.docs-article.prose h2 {
+  margin-top: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--ns-border);
+}
+.docs-article.prose code:not(pre code) {
+  background: var(--ns-surface-alt);
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--ns-radius-sm);
+  font-size: 0.875em;
+}
+.docs-article.prose a {
+  color: var(--ns-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.docs-article.prose h1 a,
+.docs-article.prose h2 a,
+.docs-article.prose h3 a,
+.docs-article.prose h4 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Footer */
+.docs-footer {
+  border-top: 1px solid var(--ns-border);
+  padding-top: 1.5rem;
+  margin-top: 3rem;
+}
+
+/* Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.docs-main {
+  animation: fade-in-up 0.35s ease;
+}
