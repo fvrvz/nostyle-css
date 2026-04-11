@@ -41,6 +41,8 @@ jobs:
 
       - name: Generate static docs
         run: pnpm --filter docs-site-nuxt run generate
+        env:
+          NUXT_APP_BASE_URL: /nostyle-css/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
