@@ -1,35 +1,22 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "nostyle-monorepo",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
-  "version": "0.1.0",
-  "license": "0BSD",
+  "packageManager": "pnpm@10.12.4",
   "scripts": {
-    "build:gatsby": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "build": "pnpm run build:css && pnpm run build:docs",
+    "build:css": "pnpm --filter nostyle-css run build",
+    "build:docs": "pnpm --filter docs-site-nuxt run build",
+    "dev": "pnpm --filter docs-site-nuxt run dev",
+    "preview": "pnpm --filter docs-site-nuxt run preview",
+    "generate": "pnpm --filter docs-site-nuxt run generate",
+    "lint": "echo 'No linter configured yet'",
+    "clean": "rm -rf nostyle/dist docs-site-nuxt/.output docs-site-nuxt/.nuxt"
   },
-  "dependencies": {
-    "gatsby": "^3.6.2",
-    "gatsby-plugin-react-helmet": "^4.8.0",
-    "gatsby-source-filesystem": "^3.8.0",
-    "gatsby-transformer-remark": "^4.5.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0"
-  },
-  "devDependencies": {
-    "prettier": "2.2.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "better-sqlite3",
+      "esbuild"
+    ]
   }
 }

@@ -1,0 +1,56 @@
+{
+  "name": "nostyle-css",
+  "version": "2.0.0",
+  "description": "A lightweight, utility-first CSS framework with zero JavaScript — use it like Tailwind, ship it lean.",
+  "main": "dist/nostyle.css",
+  "style": "dist/nostyle.css",
+  "exports": {
+    ".": "./dist/nostyle.css",
+    "./css": "./dist/nostyle.css",
+    "./css/full": "./dist/nostyle.css",
+    "./css/treeshake": "./dist/nostyle.treeshake.css",
+    "./base": "./src/base.css",
+    "./utilities": "./src/utilities.css",
+    "./components": "./src/components.css",
+    "./src": "./src/index.css",
+    "./postcss": "./postcss.config.cjs"
+  },
+  "files": [
+    "dist",
+    "src",
+    "postcss.config.cjs"
+  ],
+  "keywords": [
+    "css",
+    "css-framework",
+    "utility-first",
+    "lightweight",
+    "tailwind-alternative",
+    "postcss",
+    "purgecss",
+    "treeshake",
+    "no-javascript"
+  ],
+  "homepage": "https://fvrvz.github.io/nostyle-css",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fvrvz/nostyle-css"
+  },
+  "bugs": "https://github.com/fvrvz/nostyle-css/issues",
+  "author": "Faraaz Khan <faraaz@fayso.dev>",
+  "license": "MIT",
+  "scripts": {
+    "build": "pnpm run build:full && pnpm run build:treeshake",
+    "build:full": "cross-env NOSTYLE_PURGE=0 postcss src/index.css -o dist/nostyle.css",
+    "build:treeshake": "cross-env NOSTYLE_PURGE=1 postcss src/index.css -o dist/nostyle.treeshake.css"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^8.0.0",
+    "autoprefixer": "^10.4.19",
+    "cross-env": "^10.1.0",
+    "cssnano": "^7.1.4",
+    "postcss": "^8.4.38",
+    "postcss-cli": "^10.1.0",
+    "postcss-import": "^16.1.1"
+  }
+}

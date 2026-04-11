@@ -1,0 +1,109 @@
+:root {
+  --ns-bg: #f8fafc;
+  --ns-surface: #ffffff;
+  --ns-surface-alt: #f1f5f9;
+  --ns-text: #162031;
+  --ns-muted: #5a667a;
+  --ns-border: #dbe2ea;
+  --ns-primary: #0c6cf2;
+  --ns-primary-ink: #ffffff;
+  --ns-primary-hover: #0a5ad4;
+  --ns-success: #0f9f6e;
+  --ns-warning: #d38a15;
+  --ns-danger: #d84057;
+  --ns-radius-sm: 0.375rem;
+  --ns-radius-md: 0.625rem;
+  --ns-radius-lg: 0.875rem;
+  --ns-radius-xl: 1.25rem;
+  --ns-shadow-sm: 0 1px 2px rgb(11 20 38 / 0.08);
+  --ns-shadow-md: 0 4px 16px rgb(17 27 47 / 0.1);
+  --ns-shadow-lg: 0 14px 32px rgb(17 27 47 / 0.12);
+  --ns-font-sans: "Inter", "Instrument Sans", "Segoe UI", sans-serif;
+  --ns-font-mono: "JetBrains Mono", "Fira Code", Consolas, monospace;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --ns-bg: #0b1121;
+  --ns-surface: #111827;
+  --ns-surface-alt: #1a2332;
+  --ns-text: #e2e8f0;
+  --ns-muted: #94a3b8;
+  --ns-border: #1e293b;
+  --ns-primary: #60a5fa;
+  --ns-primary-ink: #0d1b33;
+  --ns-primary-hover: #93c5fd;
+  --ns-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.3);
+  --ns-shadow-md: 0 4px 16px rgb(0 0 0 / 0.3);
+  --ns-shadow-lg: 0 14px 32px rgb(0 0 0 / 0.4);
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ns-bg: #0b1121;
+    --ns-surface: #111827;
+    --ns-surface-alt: #1a2332;
+    --ns-text: #e2e8f0;
+    --ns-muted: #94a3b8;
+    --ns-border: #1e293b;
+    --ns-primary: #60a5fa;
+    --ns-primary-ink: #0d1b33;
+    --ns-primary-hover: #93c5fd;
+    --ns-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.3);
+    --ns-shadow-md: 0 4px 16px rgb(0 0 0 / 0.3);
+    --ns-shadow-lg: 0 14px 32px rgb(0 0 0 / 0.4);
+    color-scheme: dark;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ns-border) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--ns-border);
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--ns-muted);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--ns-font-sans);
+  color: var(--ns-text);
+  background: var(--ns-bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+code,
+pre {
+  font-family: var(--ns-font-mono);
+}
