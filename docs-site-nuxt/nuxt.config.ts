@@ -33,4 +33,7 @@ export default defineNuxtConfig({
   css: ["@fayso/nostyle-css/css", "~/assets/main.css"],
   devtools: { enabled: true },
   compatibilityDate: "2024-04-03",
+  nitro: {
+    preset: "github-pages",
+  },
 });

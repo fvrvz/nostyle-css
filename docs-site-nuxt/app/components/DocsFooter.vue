@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { Heart } from "@lucide/vue";
+import { useAssetPath } from "~/composables/useAssetPath";
+
+const assetPath = useAssetPath();
 </script>
 
 <template>
@@ -17,11 +20,11 @@ import { Heart } from "@lucide/vue";
           style="color: #a855f7"
         >
           <img
-            src="/fayso-logo.svg"
+            :src="assetPath('/fayso-logo.svg')"
             alt="FaySo"
             width="72"
             height="24"
-            class="inline-block"
+            class="inline-block dark:invert"
             style="display: inline; vertical-align: middle"
           />
         </a>
