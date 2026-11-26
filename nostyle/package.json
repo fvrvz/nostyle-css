@@ -1,6 +1,6 @@
 {
   "name": "@fayso/nostyle-css",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A lightweight, utility-first CSS framework with zero JavaScript — use it like Tailwind, ship it lean.",
   "main": "dist/nostyle.css",
   "style": "dist/nostyle.css",

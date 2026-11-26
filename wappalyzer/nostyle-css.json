@@ -1,6 +1,7 @@
 {
   "cats": [66],
   "description": "NoStyle CSS is a lightweight, utility-first CSS framework with zero JavaScript.",
+  "icon": "NoStyleCSS.svg",
   "website": "https://fvrvz.github.io/nostyle-css",
   "oss": true,
   "css": [
