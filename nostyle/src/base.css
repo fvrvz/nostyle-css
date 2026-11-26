@@ -1,4 +1,6 @@
+/*! NoStyle CSS | MIT License | https://fvrvz.github.io/nostyle-css */
 :root {
+  --ns-framework: "nostyle-css";
   --ns-bg: #f8fafc;
   --ns-surface: #ffffff;
   --ns-surface-alt: #f1f5f9;
